@@ -11,5 +11,17 @@ public class Main {
         TheaterLights lights = new TheaterLights("Theater Ceiling Lights");
         Screen screen = new Screen("Theater Screen");
         PopcornPopper popper = new PopcornPopper("Popcorn Popper");
+
+        MovieFacade watchMovie = new MovieFacade(popper, lights, screen, amp, dvd, projector);
+        watchMovie.startMovie();
+        watchMovie.afterMovie();
+
+        MusicFacade listenToMusic = new MusicFacade(lights, amp, cd);
+        listenToMusic.startMusic();
+        listenToMusic.afterMusic();
+
+        RadioFacade listenToRadio = new RadioFacade(amp, tuner);
+        listenToRadio.startRadio(175.5);
+        listenToRadio.afterRadio();
     }
 }
