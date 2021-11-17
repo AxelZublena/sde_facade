@@ -12,16 +12,14 @@ public class Main {
         Screen screen = new Screen("Theater Screen");
         PopcornPopper popper = new PopcornPopper("Popcorn Popper");
 
-        MovieFacade watchMovie = new MovieFacade(popper, lights, screen, amp, dvd, projector);
-        watchMovie.startMovie();
-        watchMovie.afterMovie();
+        HomeCinemaFacade homeCinema = new HomeCinemaFacade(popper, lights, screen, projector, amp, dvd, cd, tuner);
+        homeCinema.startMovie();
+        homeCinema.afterMovie();
 
-        MusicFacade listenToMusic = new MusicFacade(lights, amp, cd);
-        listenToMusic.startMusic();
-        listenToMusic.afterMusic();
+        homeCinema.startMusic();
+        homeCinema.afterMusic();
 
-        RadioFacade listenToRadio = new RadioFacade(amp, tuner);
-        listenToRadio.startRadio(175.5);
-        listenToRadio.afterRadio();
+        homeCinema.startRadio(175.5);
+        homeCinema.afterRadio();
     }
 }
